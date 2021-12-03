@@ -50,11 +50,11 @@ class Punto(var id: String) {
             }else{
                 sur.add(punto2)
             }
-            return mapa
-        }
+            return
+            }
 
     } fun listaPuntos(){
-          var lista:Punto = Punto()
+          var lista = listOf<Punto>()
     }
 
 
