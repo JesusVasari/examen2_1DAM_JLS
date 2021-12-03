@@ -26,7 +26,7 @@ class Punto(var id: String) {
         fun distancia(pa: Punto, pb: Punto): Double {
             return
         }
-        
+
     // (RA6.a,c) Create un método estático (método de clase) con nombre localizacionGeograficaNS
         fun localizacionGeograficaNS(punto1: Punto, punto2: Punto): Map<Punto, MutableList<Punto>> {
             var norte = mutableListOf<Punto>()
