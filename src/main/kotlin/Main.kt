@@ -13,25 +13,32 @@ class Punto(var id: String) {
     }
 
     // (RA2.c) Crea un método llamado obtenerCoordenadas
+    /**
+     * retorna un par de x e y
+     */
     fun obtenerCoordenadas(): Pair<Int, Int> = Pair(x, y)
 
 
     companion object {
         // (RA2.e,f) Create un método estático (método de clase) con nombre componenteDeVector
-        fun componenteDeVector(pA: Punto, pB: Punto) {
-            return Punto(pA.id + pB.id, pB.x - pA.x, pB.y - pA.y)
+        fun componenteDeVector(pA: Punto, pB: Punto) :Pair<String, Pair<Int,Int>>{
+            return Pair(pA.id + pB.id, Pair(pB.x - pA.x, pB.y - pA.y))
         }
 
         // *OPCIONAL (RA2.e,f) Create un método estático (método de clase) con nombre distancia
         fun distancia(pa: Punto, pb: Punto): Double {
-            return
+           // return
         }
 
     // (RA6.a,c) Create un método estático (método de clase) con nombre localizacionGeograficaNS
+        /**
+         * se crea norte y sur y dependiendo del valor de y se añade a una lista de norte
+         * o sur
+         */
         fun localizacionGeograficaNS(punto1: Punto, punto2: Punto): Map<Punto, MutableList<Punto>> {
-            var norte = mutableListOf<Punto>()
-            var sur = mutableListOf<Punto>()
-            var mapa = mapOf(punto1 to norte, punto2 to sur)
+            val norte = mutableListOf<Punto>()
+            val sur = mutableListOf<Punto>()
+            val mapa = mapOf(punto1 to norte, punto2 to sur)
             if (punto1.y >= 0) {
                 norte.add(punto1)
             } else {
@@ -43,10 +50,14 @@ class Punto(var id: String) {
             }else{
                 sur.add(punto2)
             }
-            return (mapa)
+            return mapa
         }
 
+    } fun listaPuntos(){
+          var lista:Punto = Punto()
     }
+
+
 
 }
 
@@ -55,6 +66,11 @@ fun main(args: Array<String>) {
 
     var punto1: Punto = Punto(x = 7, y = 4)
     println(punto1.obtenerCoordenadas())
+
+
+
+
+
 
 
 }
