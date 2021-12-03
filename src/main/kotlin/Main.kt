@@ -50,7 +50,7 @@ class Punto(var id: String) {
             }else{
                 sur.add(punto2)
             }
-            return
+            return mapa
             }
 
     } fun listaPuntos(){
